@@ -1,9 +1,17 @@
-FROM openjdk:8-jdk-alpine
+FROM maven:3.5.2-jdk-8-alpine AS MAVEN_BUILD
 
-COPY target/abinovarghese-server-0.0.1-SNAPSHOT.jar /usr/app/
+MAINTAINER Brian Hannaway
 
-WORKDIR /usr/app
+COPY pom.xml /build/
+COPY src /build/src/
 
-RUN sh -c 'touch abinovarghese-server-0.0.1-SNAPSHOT.jar'
+WORKDIR /build/
+RUN mvn package
 
-ENTRYPOINT ["java","-jar","abinovarghese-server-0.0.1-SNAPSHOT.jar"]
+FROM openjdk:8-jre-alpine
+
+WORKDIR /app
+
+COPY --from=MAVEN_BUILD /build/target/abinovarghese-server-0.0.1-SNAPSHOT.jar /app/
+
+ENTRYPOINT ["java", "-jar", "abinovarghese-server-0.0.1-SNAPSHOT.jar"]
