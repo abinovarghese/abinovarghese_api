@@ -23,3 +23,8 @@
 hs_err_pid*
 replay_pid*
 target/
+target/abinovarghese-server-0.0.1-SNAPSHOT.jar.original
+target/classes/META-INF/maven/com.abinovarghese.server/abinovarghese-server/pom.properties
+target/surefire-reports/TEST-com.abinovarghese.server.DemoApplicationTests.xml
+target/surefire-reports/com.abinovarghese.server.DemoApplicationTests.txt
+target/classes/META-INF/maven/com.abinovarghese.server/abinovarghese-server/pom.xml
