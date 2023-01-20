@@ -1,7 +1,5 @@
 FROM maven:3.5.2-jdk-8-alpine AS MAVEN_BUILD
 
-MAINTAINER Brian Hannaway
-
 COPY pom.xml /build/
 COPY src /build/src/
 
