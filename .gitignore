@@ -28,3 +28,4 @@ target/classes/META-INF/maven/com.abinovarghese.server/abinovarghese-server/pom.
 target/surefire-reports/TEST-com.abinovarghese.server.DemoApplicationTests.xml
 target/surefire-reports/com.abinovarghese.server.DemoApplicationTests.txt
 target/classes/META-INF/maven/com.abinovarghese.server/abinovarghese-server/pom.xml
+.project
