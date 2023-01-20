@@ -140,24 +140,6 @@
 	<build>
         <plugins>
 			<plugin>
-			<artifactId>maven-resources-plugin</artifactId>
-			<executions>
-			      <execution>
-			          <id>copy-resources</id>
-			          <phase>validate</phase>
-			          <goals><goal>copy-resources</goal></goals>
-			          <configuration>
-			              <outputDirectory>${project.parent.basedir}/Server/abinovarghese/src/main/resources/static/</outputDirectory >
-			              <resources>
-			                  <resource>
-			                      <directory>${project.parent.basedir}/Client/abinovarghese/web/dist/abinovarghese/</directory >
-			                  </resource>
-			              </resources>
-			          </configuration>
-			      </execution>
-			</executions>
-			</plugin>
-			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-failsafe-plugin</artifactId>
 			</plugin>
@@ -168,6 +150,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+			        <addResources>true</addResources>
+			      </configuration>
             </plugin>
             <plugin>
 		        <groupId>org.apache.maven.plugins</groupId>
